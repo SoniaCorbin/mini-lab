@@ -16,7 +16,7 @@ const securityHeaders = [
   }, 
   {
     key: 'Permissions-Policy', 
-    value: 'camera=(), microphone=(), geolocation=(), interest-cohors=()', 
+    value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()', 
   }, 
 ...(isProduction
     ? [
@@ -34,6 +34,7 @@ const securityHeaders = [
       isProduction ? '' : "'unsafe-eval'"
     } https:`,
     "frame-src https://js.stripe.com https://checkout.stripe.com https://hooks.stripe.com", 
+    "connect-src 'self' https://api.stripe.com",
     "img-src 'self' data: https", 
     "style-src 'self' 'unsafe-inline'",
     "font-src 'self' data:", 
