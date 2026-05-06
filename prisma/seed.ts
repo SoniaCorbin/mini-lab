@@ -34,7 +34,7 @@ async function main() {
   // Création d'un panier de test
   const cart = await prisma.cart.create({
     data: {
-      userId: "user-test-001",
+      userId: "demo-user-id",
     },
   });
 

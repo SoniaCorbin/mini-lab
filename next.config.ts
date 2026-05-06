@@ -31,7 +31,7 @@ const securityHeaders = [
   value: [
     "default-src 'self'", 
     `script-src 'self' 'unsafe-inline' ${
-      isProduction ? ' ' : 'unsafe-eval'
+      isProduction ? '' : "'unsafe-eval'"
     } https:`,
     "frame-src https://js.stripe.com https://checkout.stripe.com https://hooks.stripe.com", 
     "img-src 'self' data: https", 
