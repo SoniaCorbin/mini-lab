@@ -78,11 +78,11 @@ export async function createCheckoutSession(
             cartId: cart.id, 
             userId, 
         }, 
-        locale: 'fr', // Afficher la papge Stripe Checkout en francais
+        locale: 'fr', // Afficher la page Stripe Checkout en français
     }); 
 
     if (!createCheckoutSession.url) {
-        throw new Error("Stripe n'a pas retourne d'URL de paiement");
+        throw new Error("Stripe n'a pas retourné d'URL de paiement");
     }
     redirect(createCheckoutSession.url);
 }

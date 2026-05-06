@@ -42,7 +42,7 @@ export default async function CartPage() {
                             <div>
                                 <h2 className="text-lg font-semibold">{item.product.name}</h2>
                                 <p className="text-gray-600">
-                                    Quantite : {item.quantity}
+                                    Quantité : {item.quantity}
                                 </p>
                             </div>
                             <p className="font-semibold">
