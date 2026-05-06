@@ -1,6 +1,4 @@
-import { PrismaClient } from "../app/generated/prisma";
-
-const prisma = new PrismaClient();
+import prisma from "../lib/prisma";
 
 async function main() {
   // Nettoyage des données existantes
@@ -17,7 +15,7 @@ async function main() {
     },
   });
 
-  const product2 = await prisma.product.create({
+  await prisma.product.create({
     data: {
       name: "Jean slim",
       description: "Jean slim coupe moderne",

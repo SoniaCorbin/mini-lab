@@ -1,7 +1,7 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { stripe } from "@lib/stripe";
+import { stripe } from "@/lib/stripe";
 import prisma from '@/lib/prisma';
 import { z } from 'zod';
 
@@ -17,7 +17,7 @@ export async function createCheckoutSession(
     const parsed = createCheckoutSessionSchema.safeParse(input);
     
     if (!parsed.success) {
-        throw new Error(parsed.error.errors[0].message);
+        throw new Error(parsed.error.issues[0].message);
     }
 
     const { cartId } = parsed.data;
@@ -58,7 +58,7 @@ export async function createCheckoutSession(
                     description: item.product.description ?? undefined, 
                 }, 
                 unit_amount: priceInCents, 
-            }
+            },
             quantity: item.quantity, 
         };
     });
